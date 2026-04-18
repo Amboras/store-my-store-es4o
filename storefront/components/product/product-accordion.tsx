@@ -54,20 +54,21 @@ export default function ProductAccordion({ description, details }: ProductAccord
         </AccordionItem>
       )}
 
-      <AccordionItem title="Shipping & Returns">
+      <AccordionItem title="Delivery & Formats">
         <ul className="space-y-2">
-          <li>Free standard shipping on orders over $75</li>
-          <li>Express shipping available at checkout</li>
-          <li>Free returns within 30 days of delivery</li>
-          <li>Items must be unworn with original tags</li>
+          <li>Instant delivery — download links emailed the moment your order clears</li>
+          <li>PDF, EPUB, and MOBI included in every purchase</li>
+          <li>Works on Kindle, iPad, Kobo, Android, iPhone, Mac, PC</li>
+          <li>DRM-free — store, back up, and read on unlimited devices</li>
         </ul>
       </AccordionItem>
 
-      <AccordionItem title="Care Instructions">
+      <AccordionItem title="Refund Policy">
         <ul className="space-y-2">
-          <li>Please refer to the care label on the product</li>
-          <li>Store in a cool, dry place away from direct sunlight</li>
-          <li>Handle with care to maintain product quality</li>
+          <li>30-day, no-questions-asked refund — full amount, back to your card</li>
+          <li>Keep the files, we trust you</li>
+          <li>Email hello@folio.shop with your order number to initiate</li>
+          <li>Lifetime access and free updates to every future revision</li>
         </ul>
       </AccordionItem>
     </div>

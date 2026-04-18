@@ -4,35 +4,32 @@
 
 @layer base {
   :root {
-    --background: 40 20% 98%;
-    --foreground: 0 0% 10%;
-    --muted: 40 10% 94%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 35 40% 50%;
+    /* Folio — literary ebook palette: warm cream + deep ink + brass gold */
+    --background: 36 30% 97%;
+    --foreground: 220 30% 12%;
+    --muted: 36 20% 92%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 35 60% 45%;
     --accent-foreground: 0 0% 100%;
-    --border: 40 10% 88%;
-    --ring: 35 40% 50%;
-    --primary: 0 0% 10%;
-    --primary-foreground: 0 0% 98%;
+    --border: 36 18% 86%;
+    --ring: 35 60% 45%;
+    --primary: 220 30% 12%;
+    --primary-foreground: 36 30% 97%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-
-    /* Brand colors (dynamically injected from Store.metadata.brand) */
-    /* Access in CSS: var(--brand-primary), var(--brand-secondary) */
-    /* Managed by BrandStyleInjector component */
   }
 
   .dark {
-    --background: 0 0% 6%;
-    --foreground: 40 20% 94%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 55%;
-    --accent: 35 45% 55%;
-    --accent-foreground: 0 0% 100%;
-    --border: 0 0% 16%;
-    --ring: 35 45% 55%;
-    --primary: 40 20% 94%;
-    --primary-foreground: 0 0% 6%;
+    --background: 220 30% 8%;
+    --foreground: 36 30% 94%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 36 10% 65%;
+    --accent: 35 65% 55%;
+    --accent-foreground: 220 30% 8%;
+    --border: 220 20% 18%;
+    --ring: 35 65% 55%;
+    --primary: 36 30% 94%;
+    --primary-foreground: 220 30% 8%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
   }
@@ -90,7 +87,7 @@
   }
 
   .border-brand-primary {
-    border-color: var(--brand-primary, hsl(var(--border)));
+    border-color: var(--brand-primary, hsl(var(--primary)));
   }
 
   .bg-brand-primary {
@@ -99,6 +96,20 @@
 
   .bg-brand-secondary {
     background-color: var(--brand-secondary, hsl(var(--accent)));
+  }
+
+  /* Subtle paper texture overlay for literary feel */
+  .paper-grain {
+    background-image:
+      radial-gradient(hsla(220, 30%, 12%, 0.025) 1px, transparent 1px),
+      radial-gradient(hsla(220, 30%, 12%, 0.018) 1px, transparent 1px);
+    background-size: 24px 24px, 56px 56px;
+    background-position: 0 0, 12px 28px;
+  }
+
+  /* Thin serif-like accent for quotes and editorial */
+  .rule-gold {
+    @apply h-px w-12 bg-accent;
   }
 }
 
@@ -109,7 +120,7 @@ html {
 
 /* Selection color */
 ::selection {
-  @apply bg-accent/20 text-foreground;
+  @apply bg-accent/30 text-foreground;
 }
 
 /* Focus styles */
@@ -131,4 +142,13 @@ html {
 
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
+}
+
+/* Marquee for trusted-by strip */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }

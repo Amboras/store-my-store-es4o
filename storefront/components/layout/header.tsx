@@ -82,8 +82,11 @@ export default function Header() {
 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <span className="font-heading text-2xl font-semibold tracking-tight">
-                Store
+              <span className="font-heading text-2xl font-semibold tracking-tight italic">
+                Folio
+              </span>
+              <span className="hidden sm:inline text-[10px] uppercase tracking-[0.25em] text-muted-foreground pt-1">
+                Ebooks
               </span>
             </Link>
 
