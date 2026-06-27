@@ -23,7 +23,7 @@ const READER_IMAGE = 'https://images.unsplash.com/photo-1519682337058-a94d519337
 
 export default function HomePage() {
   const { data: collections } = useCollections()
-  const featured = collections?.find((c) => c.handle === 'featured-reads') || collections?.[0]
+  const featured = collections?.find((c: { handle?: string | null; id?: string }) => c.handle === 'featured-reads') || collections?.[0]
   const [newsletterEmail, setNewsletterEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
 
